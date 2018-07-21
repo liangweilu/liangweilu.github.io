@@ -4,7 +4,7 @@
 ## 关于Github Pages
 &emsp;&emsp; GIthub Pages则是github上的一项功能，可以放置网页文件到指定文件夹，然后给你一个专属域名用于展示一些项目，但现在大多用来开发制作个人博客网站。本教程就是基于此来搭建一个自己专属的博客。  
 
-__本博客地址:__ https://byeluliangwei.github.io 
+__本博客地址:__ https://byeluliangwei.github.io
 
 ## 搭建步骤  
 
@@ -33,4 +33,4 @@ __本博客地址:__ https://byeluliangwei.github.io
 
 ## 致谢
 
-本博客是在[dawn1432](dawn1432.github.io) 博客模板上个性化修改而成，是一个简洁的博客模板。
+本博客是在[dawn1432](https://dawn1432.github.io) 博客模板上个性化修改而成，是一个简洁的博客模板。
