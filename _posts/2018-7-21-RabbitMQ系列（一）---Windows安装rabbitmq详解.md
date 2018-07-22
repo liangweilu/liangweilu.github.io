@@ -50,6 +50,6 @@ tags: RabbitMQ
 这样我们就可以通过ip远程访问我们的RabbitMQ服务了(当然，需要在同一网段中，或者你的ip地址已经映射到公网了)。为什么需要远程呢？当你的服务部署在服务器上的时候，你总不能还使用`localhost:15672`去访问吧。另外一点需要注意的是，RabbitMQ服务web界面的端口是`15672`，而我们客户端访问的ip地址实际上是`5672`，所以在开发的时候要注意一下。  
 
 ### 参考
-- RabbitMQ官网：http://www.rabbitmq.com/  
-- Erlang官网：http://www.erlang.org  
-- localhost无法登陆:https://www.cnblogs.com/lazyboy/p/3853371.html
+- RabbitMQ官网：<http://www.rabbitmq.com/>  
+- Erlang官网：<http://www.erlang.org>  
+- localhost无法登陆:<https://www.cnblogs.com/lazyboy/p/3853371.html>
