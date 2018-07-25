@@ -9,7 +9,7 @@ tags: RabbitMQ
 
 &emsp;&emsp;MQ全称为Message Queue, 是一种分布式应用程序的的通信方法，它是消费-
 生产者模型的一个典型的代表，生产者向消息队列中生产消息，消费者从消息队列中取出消息，
-并将其消费。RabbitMQ便是MQ产品的一个典型代表，它是有Erlang编写的一款基于AMPQ协议
+并将其消费。RabbitMQ便是MQ产品的一个典型代表，它是由Erlang编写的一款基于AMPQ协议
 可复用的高性能企业消息系统。当然，消息通信解决方案并不止RabbitMQ一种，诸如ActiveMQ，
 ZeroMQ，Apache Qpid都提供了相关的解决方案。由于RabbitMQ的可靠性，高性能，高并发，
 并且它是处了Apache Pid之外唯一实现了AMPQ标准的代理服务器，使得它相较于其竞争者，
@@ -31,8 +31,8 @@ ZeroMQ，Apache Qpid都提供了相关的解决方案。由于RabbitMQ的可靠�
 还是接收消息，这些动作都是在信道里面完成的。下图是一个简洁的RabbitMQ通信示意图。
 ![](https://byeluliangwei.github.io/images/rabbitmq-basic/step3.png)
 
-&emsp;&emsp;为什么需要信道而不是直接通过TCP连接发送AMPQ命令呢？主要原因在于对操作系
-系统来说，建立和销毁TCP连接是一件非常昂贵的开销。假设应用程序从队列消费信息，并根据
+&emsp;&emsp;为什么需要信道而不是直接通过TCP连接发送AMPQ命令呢？主要原因在于对操作系统来说，建立和销毁TCP连接是一件非常昂贵的开销。
+假设应用程序从队列消费信息，并根据
 服务需求合理调度线程，如果我们只进行TCP连接，那么每个线程都需要自行连接到RabbitMQ，
 这不仅造成了TCP连接的巨大浪费，而且操作系统每秒的连接数也就只有这么点，很快就会达到
 性能的瓶颈。如果我们为所有的线程只使用一条TCP连接以满足性能需求，但又能确保没个线程的私密性
@@ -53,7 +53,7 @@ ZeroMQ，Apache Qpid都提供了相关的解决方案。由于RabbitMQ的可靠�
 &emsp;&emsp;Exchange是RabbitMQ中的消息交换机，生产者产生消息之后，不是直接发送到
 队列中，而是首先发送到Exchange。Exchange根据自身的分发策略，将消息发送到与之绑定的
 队列中，RabbitMQ支持的Exchange有四种类型，分别是：
-- Direct：直接交换器，类似于单播，Exchange会叫生产者传来的消息，根据完全匹配的
+- Direct：直接交换器，类似于单播，Exchange会将生产者传来的消息，根据完全匹配的
 routing_key发送到与之绑定的queue上。exchange和queue之间的关联关系就是通过Binding
 和routing_key关联起来的，exchange会根据对应的routing_key发送消息到与之绑定的队列上。
 ![](https://byeluliangwei.github.io/images/rabbitmq-basic/step5.png)
