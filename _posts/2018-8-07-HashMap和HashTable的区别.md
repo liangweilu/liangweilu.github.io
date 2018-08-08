@@ -69,4 +69,4 @@ HashMap中，null可以作为Key，但是这样的键只有一个，可以有一
 ### 参考
 Hashtable源码剖析：<https://blog.csdn.net/ns_code/article/details/36191279>  
 HashMap源码剖
-：http://blog.csdn.net/ns_code/article/details/36034955
+：<http://blog.csdn.net/ns_code/article/details/36034955>
