@@ -132,7 +132,7 @@ private void parseRequest() throws IOException {
 ### 原理
 &emsp;&emsp;zuul为我们提供的包装类，实际上就是编写一个继承与`javax.servlet.http.HttpServletRequestWrapper`的类，然后将客户端请求的流数据缓存到数组中，这样就可以对数据重复使用了。如果你学过设计模式，那么从名字你肯定知道这是一个装饰模式，那它的结构到底是怎么样的呢，如下图所示：  
 ![](https://byeluliangwei.github.io/images/web-develop/step1.png)  
-具体设计模式的知识我会另外写一个系列的文章，这里我就不多展开了。上图大致是一个UML图，其结构和层次也很清晰，我们只需要重写父类中的一些方法，就可以达到重复使用请求参数的目的。这个就是zuul网关为我们实现的一个装饰类，但是如果我们的项目不是基于zuul网关，就是普通的mvc结构，我们也有前面所说的需求，我们应该怎么做呢？。
+具体设计模式的知识我会另外写一个系列的文章，这里我就不多展开了。上图大致是一个UML图，其结构和层次也很清晰，我们只需要重写父类中的一些方法，就可以达到重复使用请求参数的目的。这个就是zuul网关为我们实现的一个装饰类，但是如果我们的项目不是基于zuul网关，就是普通的mvc结构，我们也有前面所说的需求，我们应该怎么做呢？。  
 &emsp;&emsp;下面我以一个mvc结构的工程中实现截取客户端请求，然后修改请求体内容，最终传给controller的例子，来演示一下解决办法。  
 
 自定义的包装类：
@@ -266,6 +266,9 @@ public class TestController {
 
 ### 总结
 &emsp;&emsp;在解决过程中其实还遇到过一点问题，就是在复写`getInputStream()`方法的时候，我是按照zuul实现的那个一样，对inputStream进行了一次包装，但是在controller的时候解析不出来，开始一直不知道什么原因。后来就没有对inputStream进行包装了，直接在复写方法的时候实现ServletInputStream接口中的方法，就解决了。至今我也没找到为什么按照zuul那样对流包装一次，就导致解析不到了。
+
+### 工程地址
+Github：<https://github.com/byeluliangwei/web-development>
 
 ### 参考
 简书： <https://www.jianshu.com/p/85feeb30c1ed>  
