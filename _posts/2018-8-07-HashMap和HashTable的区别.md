@@ -64,7 +64,7 @@ HashMap中，null可以作为Key，但是这样的键只有一个，可以有一
 
 ### 总结
 
-&emsp;&emsp;由于Hashtable中的父类已经被弃用了，所以一般情况下我们也没有适用Hashtable，对于单线程情况下，通常是使用的HashMap。但是当多线程环境下，我们需要线程安全的键值对集合是，可以使用`ConCurrentHashMap`。
+&emsp;&emsp;由于Hashtable中的父类已经被弃用了，所以一般情况下我们也没有适用Hashtable，对于单线程情况下，通常是使用的HashMap。但是当多线程环境下，我们需要线程安全的键值对集合是，可以使用`ConCurrentHashMap`。关于HashMap和ConcurrentHashMap本来我是打算再重新写一篇的，但是看了这篇[HashMap与ConcurrentHashMap详细讲解](https://mp.weixin.qq.com/s/wNmAi1FICNu7rkmCe1GDyw)之后，我感觉已经没必要写了，直接点击链接进去看便会一目了然。
 
 ### 参考
 Hashtable源码剖析：<https://blog.csdn.net/ns_code/article/details/36191279>  
