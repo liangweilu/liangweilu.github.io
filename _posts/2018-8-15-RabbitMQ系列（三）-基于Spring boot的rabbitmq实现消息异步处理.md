@@ -62,7 +62,7 @@ server:
 ```
 
 ### 队列与交换机配置
-&emsp;&emsp;这部分配置主要是创建一个Direct类型的交换机，声明一个队列Queue，并将该队列绑定在这个交换机上，同时这部分还可以声明rabbitmq的链接信息，消息转换器等。下面对每个部分的声明进行讲解，完整的代码可以到[我的GitHub]() pull或者下载。  
+&emsp;&emsp;这部分配置主要是创建一个Direct类型的交换机，声明一个队列Queue，并将该队列绑定在这个交换机上，同时这部分还可以声明rabbitmq的链接信息，消息转换器等。下面对每个部分的声明进行讲解，完整的代码可以到[我的GitHub](https://github.com/byeluliangwei/spring-rabbitmq-demo) `clone`或者下载。  
 - 配置连接信息  
 &emsp;&emsp;根据第一篇文章rabbitmq的安装，我们可以在本地安装好rabbitmq服务，这里所说的配置连接信息，就是使我们的应用连接到已经安装好的rabbitmq服务上。如果在`application.yml`文件中已经配置了rabbitmq的地址（默认是本地127.0.0.1:5672），那么直接在配置类中注入`ConnectionFactory`即可。如果没有配置，那么就需要在代码中进行如下的配置，连接到rabbitmq服务。
 ```java
@@ -159,7 +159,7 @@ public class MessageSendProducer {
         return template;
     }
 ```
-这样有什么问题呢，当我们只有一个队列的时候，完全没有问题。但是假如我们有两个队列，比如我这个例子中，如果我们声明两个`RabbitTemplate`对象，这时就会报错了，因为`RabbitTemplate`是单例bean。但是这个时候我们仍然想要为每个队列声明一个`RabbitTemplate`模板来发送消息怎么办呢？大家可以去[我的GitHub]()上看看我写的这个例子，例子中我就是为两个队列使用了两个`RabbitTemplate`的解决办法。  
+这样有什么问题呢，当我们只有一个队列的时候，完全没有问题。但是假如我们有两个队列，比如我这个例子中，如果我们声明两个`RabbitTemplate`对象，这时就会报错了，因为`RabbitTemplate`是单例bean。但是这个时候我们仍然想要为每个队列声明一个`RabbitTemplate`模板来发送消息怎么办呢？大家可以去[我的GitHub](https://github.com/byeluliangwei/spring-rabbitmq-demo)上看看我写的这个例子，例子中我就是为两个队列使用了两个`RabbitTemplate`的解决办法。  
 &emsp;&emsp;这里再说一下消费者处理部分的手动确认消息。rabbitmq发送消息之后，默认是自动进行确认的（ack），但是实际生产者，我们在队列中异步处理消息过程中很可能会出现异常，或者消费不成功的情况，如果这个时候使用自动确认，那么rabbitmq就会认为该消息已成功处理， 但实际上是没有的，所以一般我们都会设置手动确认`AcknowledgeMode.MANUAL`。这里只是提醒一下需要注意这个问题，关于具体的原理，详细的需要大家自己去网上学习一下。  
 
 ### 总结
