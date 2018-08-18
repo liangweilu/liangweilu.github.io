@@ -6,7 +6,9 @@ tags: RabbitMQ
 ---
 ### 前言  
 
-&emsp;&emsp;RabbitMQ是一个在AMPQ(Advanced Message Queuing Protocol)协议基础上的企业级消息系统， 是一个建立在Erlang OPT平台上的开源框架。所以我们在安装RabbitMQ之前，需要安装Erlang环境，再安装RabbitMQ服务。本文只对如何在Windows环境下安装RabbitMQ做了介绍，对于其作用和原理以及如何以JAVA代码实现，我会在后续的系列中逐一写出。同时后面也会对基于RabbitMQ的Spring Cloud组件消息驱动进行介绍，这里就暂且当做是万里长征第一步吧。  
+&emsp;&emsp;RabbitMQ是一个在AMPQ(Advanced Message Queuing Protocol)协议基础上的企业级消息系统， 是一个建立在Erlang OPT平台上的开源框架。所以我们在安装RabbitMQ之前，需要安装Erlang环境，再安装RabbitMQ服务。本文只对如何在Windows环境下安装RabbitMQ做了介绍，对于其作用和原理以及如何以JAVA代码实现，我会在后续的系列中逐一写出。同时后面也会对基于RabbitMQ的Spring Cloud组件消息驱动进行介绍，这里就暂且当做是万里长征第一步吧。 由于本文是基于windows安装的，对于想在linux上安装的同学，这里我也给一个靠谱的链接。  
+
+[Linux安装RabbitMQ](https://mp.weixin.qq.com/s/j4Qj_qTbdOfpyryVzlipqw)
 
 ### 正文
 #### 1.安装Erlang环境  
@@ -53,3 +55,4 @@ tags: RabbitMQ
 - RabbitMQ官网：<http://www.rabbitmq.com/>  
 - Erlang官网：<http://www.erlang.org>  
 - localhost无法登陆:<https://www.cnblogs.com/lazyboy/p/3853371.html>
+- Linux安装:<https://mp.weixin.qq.com/s/j4Qj_qTbdOfpyryVzlipqw>
