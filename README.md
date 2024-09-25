@@ -10,9 +10,9 @@ __本博客地址:__ [https://liangweilu.github.io](https://liangweilu.github.io
 
 - Fork一个Jekyll主题的工程到你的Github账户下，你可以Fork[我的工程](https://github.com/byeluliangwei/byeluliangwei.github.io)，请务必在`__posts`目录下，删除我已有的文章。也可以自己去[JEkyll主题网站](http://jekyllthemes.org)找你喜欢的主题，然后放到你的Github仓库中。  
 
-- 进入工程所在的`setting`中，修改工程名称为`{your github name}.github.io`。如下图所示：![](https://byeluliangwei.github.io/images/readme/step1.png)  
+- 进入工程所在的`setting`中，修改工程名称为`{your github name}.github.io`。如下图所示：![](/images/readme/step1.png)
 
-- 在`setting`页面中往下拉，找到`Github Pages`,任意选择一个主题，并找到自己的博客地址。如下图所示：![](https://byeluliangwei.github.io/images/readme/step2.png)  
+- 在`setting`页面中往下拉，找到`Github Pages`,任意选择一个主题，并找到自己的博客地址。如下图所示：![](/images/readme/step2.png)
 
 - 在你fork的工程中，找到`__config`文件，并修改其中的个人信息为你自己的信息，然后提交保存。
 
