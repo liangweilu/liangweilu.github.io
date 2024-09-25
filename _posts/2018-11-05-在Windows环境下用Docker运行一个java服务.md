@@ -12,9 +12,9 @@ tags: Docker
 ### LET'S GO
 #### 1、用Dockerfile制作基础的ubuntu14.04镜像
 &emsp;&emsp;Dockerfile是我们用来构建和制作docker镜像的基本文件，它定义了镜像的构成。新建一个文件夹命名为`/docker`，在此目录下新建文件夹`/ubuntu-14.04`，然后在此目录下新建一个文件命名为`Dockerfile`（虽然可以命名为其他名称，但是不建议，因为这个是约定俗成的）。这个时候你的目录应该是和下图一样，不一样也没关系，只要能进入这个`Dockerfile`所在的目录即可，我这样是为了看着清晰明了。  
-![](https://byeluliangwei.github.io/images/docker/1.png)  
+![](./../images/docker/1.jpg)  
 现在我们需要编写这个`Dockerfile`，需要写入一些基本的命令和信息，复制的信息到文件中即可：
-```
+```bash
 # IMAGES REPOSITORY   ubuntu:14.04
 # DESCRIPTION         基于ubuntu14.04构建镜像并设置了系统编码和时区
 # VERSION             1.0.0
@@ -39,7 +39,7 @@ ENV TZ Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 ```
 然后进入`Dockerfile`这个文件所在的目录，在这个目录下打开Windows PowerShell或者DOS，这里我是用的PowerShell。然后输入命令:`docker build -t luliangwei/ubuntu:14.04 .`来构建镜像。注意命令中带有一个`.`，这个是代表docker引擎的上下文环境，而并不是我们平时所理解的当前目录。举个例子，我们现在所在的文件位置是`/docker/ubuntu-14.04/Dockerfile`,docker构建镜像的时候默认是从`Dockerfile`所在的位置开始进行构建的，也就是说`.`代表的是`Dockerfile`所在的位置。其实并不是，假如docker引擎上下文的路径是`/var/lib/21888342/`，那么此时`.`代表的位置就是`/var/lib/21888342/...`。要是还没有明白的话，就看上文中所说的[Docker入门实践](https://yeasy.gitbooks.io/docker_practice/content/)，上面有讲解的。回到这里，我们运行了命令后，就会出现如下的输出：
-```
+```bash
 PS D:\docker\ubuntu-14.04> docker build -t ubuntu:14.04 .
 Sending build context to Docker daemon   2.56kB
 Step 1/8 : FROM ubuntu:14.04
@@ -64,12 +64,12 @@ Step 4/8 : ENV LANGUAGE        zh_CN:zh
  ...
 ```
 这代表这镜像正在一步步的构建，执行完成之后输入`docker images`可以看到本地的所有镜像，如下图所示
-![](https://byeluliangwei.github.io/images/docker/2.png)  
+![](./../images/docker/2.jpg)  
 图中TAG为`<none>`的镜像时ubuntu的基础镜像，上面TAG为`14.04`的镜像时我们基于这个基础镜像，添加了时间和编码问题的镜像。然后我们运行这个镜像，就相当于运行了一个ubuntu操作系统，这个运行起来的镜像，叫做容器，`ls`一下即可看到一些基本的文件夹，如图所示
-![](https://byeluliangwei.github.io/images/docker/3.png)
+![](./../images/docker/3.jpg)
 #### 2、基于步骤1中的镜像添加s6-overlay进程管理工具
 &emsp;&emsp;步骤和前面一样，进入该`Dockerfile`文件所在的位置，在`Dockerfile`文件中写入面的信息。关于[s6-overlay更详细的信息](https://github.com/just-containers/s6-overlay)，可以去github上看，
-```
+```bash
 # IMAGES REPOSITORY   luliangwei/ubuntu:14.04
 # DESCRIPTION         安装S6进程管理工具
 # VERSION             1.0.0
@@ -93,11 +93,11 @@ ENTRYPOINT ["/init"]
 CMD []
 ```
 同样执行命令`docker build -t luliangwei/ubuntu:s6-overlay .`构建镜像，构建完成后查看镜像可以看到多了一个，如下图所示：
-![](https://byeluliangwei.github.io/images/docker/4.png)
+![](./../images/docker/4.jpg)
 其实这个镜像就是在上一个镜像的基础上安装了一个进程管理工具，为什么要这样来制作镜像，不直接在上一步安装呢，相信看完[Docker入门实践](https://yeasy.gitbooks.io/docker_practice/content/)你会明白的。
 #### 3、基于步骤2中的镜像制作Java环境的镜像
 &emsp;&emsp;步骤和上面一样，在`Dockerfile`文件中写入相关信息，然后构建镜像，当然，这个`Dockerfile`仍然需要和前面两个一样，单独的放在一个文件夹中。复制下面的信息到该`Dockerfile`文件中并在命令行中执行`docker build -t luliangwei/ubuntu:java8 .`即可。  
-```
+```bash
 # IMAGES REPOSITORY   luliangwei/ubuntu:java8
 # DESCRIPTION         安装Java8环境
 # VERSION             1.0.0
@@ -174,7 +174,7 @@ EXPOSE ${SERVER_DEFAULT_PORT}
 java -Xms256m -Xmx256m -XX:MaxNewSize=256m -XX:MaxPermSize=256m -jar ${SERVER_BIN}
 ```
 其实就是一个执行jar包的命令，如：java -jar *** 。当前目录下的文件如图所示
-![](https://byeluliangwei.github.io/images/docker/5.png)  
+![](./../images/docker/5.jpg)  
 现在我们就可以运行这个镜像，例如我的镜像ID是4b4开头的ID，所以我直接执行`docker run -it --rm -d -p 8080:1874 4b4`，然后直接通过浏览器获取curl即可访问http://localhost:1874/users?name=luliangwei 就可以得到对应的信息。如果你的jar包是自己写的服务，直接访问自己对应的地址即可。
 ### 总结
 &emsp;&emsp;windows环境下可能会遇到挂载数据卷的时候出现找不到文件的问题，可以考虑在PowerShell下设置环境变量`COMPOSE_CONVERT_WINDOWS_PATHS`为true，方法就是直接运行命令`$Env:COMPOSE_CONVERT_WINDOWS_PATHS=1`即可。PS：可以使用命令`ls env:`查看所有的环境变量及其值。另外，本例工程在github中已改成基于docker-compose来编排服务，镜像也是基于一个mini版的linux系统alpine来制作的。
