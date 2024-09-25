@@ -46,7 +46,7 @@ description: 描述信息
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. https://example.com
-favicon: "https://github.com/liangweilu/liangweilu.github.io/blob/master/assets/images/favication.png?raw=true" # the favicon for your site
+favicon: /assets/images/favication.png # the favicon for your site
 
 # Yat date format
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
@@ -180,8 +180,8 @@ yat:
 #   subheading_style: null  # Custom subheading style (e.g. color: gold)
 
 # Excerpt settings
-# excerpt:
-#   default_image: /assets/images/default-image.jpeg  # Default image when the image style is not none
+excerpt:
+  default_image: /assets/images/default-image.jpeg  # Default image when the image style is not none
 #   image_style: z          # Image layout style (It's value could be none, left, right, top, z, z-reverse)
 #   image_width: 38.2%      # Image default width
 #   image_height: 160px     # Image default height
