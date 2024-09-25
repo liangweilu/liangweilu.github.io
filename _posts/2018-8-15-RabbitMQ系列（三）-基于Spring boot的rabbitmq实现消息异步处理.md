@@ -141,11 +141,11 @@ public class MessageSendProducer {
 }
 ```
 &emsp;&emsp;完成上述配置之后，就可以启动服务，然后通过postman进行一波测试了。这里我通过psotman传递了一个user对象，请求如下图所示
-![](https://byeluliangwei.github.io/images/rabbitmq-impl/step1.png)  
+![](./../images/rabbitmq-impl/step1.png)  
 然后你可以看到如下的效果，表示队列1和队列2均已收到了生产者发送过来的消息，队列1和队列2的消费者都将这个消息打印到了控制台上。  
-![](https://byeluliangwei.github.io/images/rabbitmq-impl/step2.png)  
+![](./../images/rabbitmq-impl/step2.png)  
 但是你也可能看到的结果是这样的，因为队列是异步处理，可能有个队列先处理，或者处理的快了，输出的结果就会如下所示。
-![](https://byeluliangwei.github.io/images/rabbitmq-impl/step3.png)  
+![](./../images/rabbitmq-impl/step3.png)  
 ### 踩过的坑
 &emsp;&emsp;上文中提到了发送消息的时候，需要注入`AmqpTemplate`模板。不注入这个可以不呢？当然可以，因为我们还可以使用`RabbitTemplate`来进行消息发送，我们只需在配置文件中声明一个`RabbitTemplate`的对象，然后在发送消息的时候，直接注入该bean，和`AmqpTemplate`用法一样。声明`RabbitTemplate`如下所示
 ```java

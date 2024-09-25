@@ -36,7 +36,7 @@ static class Entry<K,V> implements Map.Entry<K,V> {
       }
 ```  
 HashMap和Hashtable中有多少个键值对，就有多少个`Entry<K,V>`对象，其存储结构如下图所示：  
-![](https://byeluliangwei.github.io/images/java/hash bucket.png)  
+![](./../images/java/hash bucket.png)  
 
 &emsp;&emsp;这是一个bucket（哈希桶）容量为8，也称为hash数组，大小为5（存了5个键值对）的HashMap/Hashtable内部存储情况。我们可以清晰的看到其内部创建了一个`Entry<K,V>`引用的数组，用来表示哈希表，数组的长度，就是哈希桶的数量。数组的每一个元素都是一个`Entry<K,V>`引用，而从`Entry<K,V>`的属性我们也可以看出，它是一个单链表结构，每个`Entry<K,V>`包含着下一个键值对的引用。  
 

@@ -262,7 +262,7 @@ public class TestController {
 }
 ```
 然后我们使用postman发起一个请求，请求内容和结果如下所示，我们可以看到结果却是是按照我们在web filter中修改的内容来显示的。
-![](https://byeluliangwei.github.io/images/web-develop/step2.png)
+![](./../images/web-develop/step2.png)
 
 ### 总结
 &emsp;&emsp;在解决过程中其实还遇到过一点问题，就是在复写`getInputStream()`方法的时候，我是按照zuul实现的那个一样，对inputStream进行了一次包装，但是在controller的时候解析不出来，开始一直不知道什么原因。后来就没有对inputStream进行包装了，直接在复写方法的时候实现ServletInputStream接口中的方法，就解决了。至今我也没找到为什么按照zuul那样对流包装一次，就导致解析不到了。
