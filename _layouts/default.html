@@ -1,27 +1,25 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html>
 
-  {%- include head.html -%}
+{% include head.html %}
 
-  <body>
+<body>
 
-    {%- include views/header.html -%}
+{% include header.html %}
 
-    {%- include views/banner.html -%}
-
-    {%- include extensions/hashlocate.html -%}
-
-    {%- include extensions/theme-toggle.html -%}
-
-    {%- include extensions/click-to-top.html -%}
-
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
+<div class="main">
+    <div class="container">
         {{ content }}
-      </div>
-    </main>
+    </div>
+    <div class="page-scrollTop" data-toggle="tooltip" data-placement="top" title="Top">
+        <a href="javascript:void(0);">
+            <div class="arrow"></div>
+            <div class="stick"></div>
+        </a>
+    </div>
+</div>
 
-    {%- include views/footer.html -%}
+{% include footer.html %}
 
-  </body>
+</body>
 </html>
