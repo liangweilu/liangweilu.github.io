@@ -27,11 +27,11 @@ defaults:
 
 
 
-title: "bit-ranger"
-email: sincerebravefight@gmail.com
+title: "1874"
+email: luliangwei1874@163.com
 description: ""
 github:
-  username: bit-ranger
+  username: 1874
 swiftype:
   searchId: iXZyPokVfxFaBTvi64Y6
 comment:
@@ -39,8 +39,8 @@ comment:
     client_id: a6fb73b3e790e234bab8
     client_secret: cc10aaff53a03d05ab2ee002dbf401dd7627c7a3
 
-url: "https://bit-ranger.github.io/blog"
-imgrepo: "https://bit-ranger.github.io/blog/static/img"
+url: "https://liangweilu.github.io/"
+imgrepo: "https://github.com/liangweilu/liangweilu.github.io/static/img"
 
 
 #url: "http://127.0.0.1:4000"
