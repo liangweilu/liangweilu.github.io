@@ -32,5 +32,5 @@ __本博客地址:__ [https://liangweilu.github.io](https://liangweilu.github.io
 - 如果失败也别担心，因为本地可能缺少某些插件，push变更到github，发布成功后去查看  
 
 ## 开启评论
-我使用的模板是：[jekyll-theme-yat]() 它支持[Disqus](https://disqus.com/)，[Gitment](https://github.com/imsun/gitment)，
+我使用的模板是：[jekyll-theme-yat](https://github.com/jeffreytse/jekyll-theme-yat) 它支持[Disqus](https://disqus.com/)，[Gitment](https://github.com/imsun/gitment)，
 [utterances](https://utteranc.es/)三种评论，打开`_config.yml`文件，取消对应的注释，并填入你自己的信息即可。
