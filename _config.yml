@@ -42,7 +42,7 @@ author: 1874
 #
 copyright: "Copyright (cleft) 2018-{currentYear} {author}"
 
-description: 描述信息
+description: 这是一段博客描述信息，看看会呈现在哪里
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://liangweilu.github.io/" # the base hostname & protocol for your site, e.g. https://example.com
