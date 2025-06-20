@@ -1,4 +1,4 @@
 home:
   heading: "欢迎来到知识的海洋"
   subheading: "Your awesome subheading"
-  banner: "Your image url"
+  banner: "/assets/images/banners/default.jpg"
