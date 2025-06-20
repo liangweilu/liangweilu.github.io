@@ -218,7 +218,7 @@ excerpt:
 # Gitment comments
 gitment:
   username: "liangweilu"
-  repo: "liangweilu/github.io"
+  repo: "liangweilu.github.io"
   client_id: "Ov23livdVPjQlX97BPml"
   client_secret: "37f9f5d719a7b87e2d296ee4ca25d9b485bb84e8"
   redirect_uri: "https://liangweilu.github.io"   # If you use a custom domain name
