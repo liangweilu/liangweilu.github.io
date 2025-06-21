@@ -2,7 +2,10 @@
 layout: post
 title: RabbitMQ系列（一）---Windows安装rabbitmq详解
 date: 2018-7-22
-tags: RabbitMQ
+categories: 
+  - 后端开发
+tags: 
+  - RabbitMQ
 ---
 ### 前言  
 

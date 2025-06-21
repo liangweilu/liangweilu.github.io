@@ -2,7 +2,10 @@
 layout: post
 title: 理解Java synchronized 关键字
 date: 2018-9-30
-tags: Java基础
+tags: 
+  - Java基础
+categories:
+  - Java基础
 ---
 ### 概念
 &emsp;&emsp;在多线程编程中，线程安全问题是我们必须要面对的一个问题，Java中就使用了synchronized关键字来实现同步，在理解这个关键字之前，我们首先要明确一点，synchronized锁的不是代码，而是锁的对象。我们先看看下面的两个特性：  

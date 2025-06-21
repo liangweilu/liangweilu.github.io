@@ -2,7 +2,10 @@
 layout: post
 title: RabbitMQ系列（三）---基于Spring boot的rabbitmq实现消息异步处理
 date: 2018-8-15
-tags: RabbitMQ
+categories:
+  - 后端开发
+tags:
+  - RabbitMQ
 ---
 ### 概述
 &emsp;&emsp;前面已经对rabbitmq的安装和基本概念进行了讲解，那么在实际的项目实战中，我们如何利用rabbitmq来实现一个消息异步处理的功能呢。本文就将基于Spring Boot 中的rabbitmq来实现一个简单的例子，并对实现过程中遇到的问题进行讲解。如果对spring boot还不了解的话，请自行上网学习，这里重点是对rabbitmq的实现进行讲解。  

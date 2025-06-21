@@ -1,8 +1,11 @@
 ---
 layout: post
 title: RabbitMQ系列（二）-基本概念和原理
+categories:
+  - 后端开发
 date: 2018-7-22
-tags: RabbitMQ
+tags: 
+  - RabbitMQ
 ---
 
 ### 简介

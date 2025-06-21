@@ -2,7 +2,10 @@
 layout: post
 title: HttpServletRequest不能重复使用请求数据
 date: 2018-08-11
-tags: WEB开发
+tags: 
+  - 后端开发
+categories:
+  - 后端开发
 ---
 ### 前言
 &emsp;&emsp;本文通过我在实际开发中遇到的一个问题，从而对`HttpServletRequest`重复使用请求数据的问题进行讲解，看完本文你将了解到：

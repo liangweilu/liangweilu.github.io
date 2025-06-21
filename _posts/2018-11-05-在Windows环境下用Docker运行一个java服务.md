@@ -2,7 +2,11 @@
 layout: post
 title: Windows环境下在Docker容器中运行一个Java服务
 date: 2018-11-05
-tags: Docker
+tags: 
+  - Docker
+categories:
+  - 后端开发
+
 ---
 ### 预备工作
 - 了解Docker相关的基本概念，容器，镜像等。这里有一个中文版的[Docker入门实践](https://yeasy.gitbooks.io/docker_practice/content/)，介绍了docker相关的基本概念和知识。

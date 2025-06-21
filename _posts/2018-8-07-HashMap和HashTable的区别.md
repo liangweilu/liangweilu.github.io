@@ -3,6 +3,8 @@ layout: post
 title: HashMap和Hashtable的区别
 date: 2018-08-07
 tags: Java基础
+categories:
+  - Java基础
 ---
 ### 概述
 
