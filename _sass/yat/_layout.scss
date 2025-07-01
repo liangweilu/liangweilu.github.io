@@ -481,7 +481,7 @@ html {
     }
 
     p, hr {
-      margin-bottom: 24px;
+      margin-bottom: 10px;
     }
 
     hr {
@@ -495,7 +495,7 @@ html {
     &>*:first-child {
       @include relative-font-size(1.425);
       color: #333;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     ul {
@@ -514,7 +514,7 @@ html {
 }
 
 .post-comments {
-  padding-top: 25px;
+  padding-top: 18px;
 }
 
 /**
