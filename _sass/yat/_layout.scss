@@ -445,6 +445,12 @@ html {
     line-height: 28.8px;
     color: #353841;
 
+    * {
+        font-size: inherit;
+        line-height: inherit;
+        color: inherit;
+      }
+
     h2 {
       @include relative-font-size(2);
 
