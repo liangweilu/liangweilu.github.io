@@ -12,19 +12,19 @@ categories:
 对常用集合的掌握程度，也考察了我们在开发中是否能正确的使用集合类。网上有很多的博文对这个问题进行了阐述，我这里只是作为一个自己的总结，也希望自己能尽量详尽，深入
 的比较两者的差异。其实集合的比较无非就是从效率，安全性，接口，实现的算法等方面进行比较，下表是我在学习过程中总结出来的异同点，有些不宜对比的展示的特点，将在下文中进行说明和解释。表中的内容不需要记，理解了下面的原理，自然就明白了。     
 
- - | HashMap  | Hashtable |
-- | - |
-效率 | 高 | 低
-线程安全性 | 线程不安全 | 线程安全  
-null Key | 支持 | 不支持
-null Value | 支持 | 不支持
-初始容量 | 16 | 11
-扩充规则 | 原来的2n | 原来的2n + 1
-数据结构 | hash表 | hash表
-产生时间 | JDK1.2 | JDK1.0
-父类 | AbstructMap | Dictionary ( 已经弃用了 )
-实现 | Map、Cloneable、Serializable | Map、Cloneable、Serializable
-迭代器 | fail-fast | enumerator
+|            | HashMap                    | Hashtable                  |
+|------------|----------------------------|----------------------------|
+| 效率         | 高                          | 低                          |
+| 线程安全性      | 线程不安全                      | 线程安全                       |
+| null Key   | 支持                         | 不支持                        |
+| null Value | 支持                         | 不支持                        |
+| 初始容量       | 16                         | 11                         |
+| 扩充规则       | 原来的2n                      | 原来的2n + 1                  |
+| 数据结构       | hash表                      | hash表                      |
+| 产生时间       | JDK1.2                     | JDK1.0                     |
+| 父类         | AbstructMap                | Dictionary ( 已经弃用了 )       |
+| 实现         | Map、Cloneable、Serializable | Map、Cloneable、Serializable |
+| 迭代器        | fail-fast                  | enumerator                 |
 
 ### 存储结构
 &emsp;&emsp;HashMap和Hashtable都是使用哈希表来存储键值对，数据结构基本一致，都创建了一个实现了`Map.Entry<K,V>`内部类`Entry<K,V>`，但是在Java8中HashMap的内部类的名字变成了`Node<K,V>`。但是数据结构仍是一样的，Entry<K,V>是一个链表结构，用来存储键值对。其结构如下所示：  
