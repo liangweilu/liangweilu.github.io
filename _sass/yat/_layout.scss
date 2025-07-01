@@ -251,6 +251,7 @@ html {
   -ms-flex: none; /* <-- Fix IE footer issue */
   padding: $spacing-unit * 2 0;
   padding-top: 72px;
+  letter-spacing: 0.05em;
 }
 
 .page-heading {
