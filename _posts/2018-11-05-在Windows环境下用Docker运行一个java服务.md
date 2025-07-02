@@ -13,7 +13,7 @@ categories:
 - 已经安装好了docker服务并确保可用。本文基于win 10，这里是安装教程：[Install Docker for Windows](https://docs.docker.com/docker-for-windows/install/)
 - 准备好一个可用的Java服务（本文基于springboot建立的一个服务）
 
-## 2. LET'S GO
+## 2. 开始
 ### 2.1 用Dockerfile制作基础的ubuntu14.04镜像
 Dockerfile是我们用来构建和制作docker镜像的基本文件，它定义了镜像的构成。新建一个文件夹命名为`/docker`，在此目录下新建文件夹`/ubuntu-14.04`，然后在此目录下新建一个文件命名为`Dockerfile`（虽然可以命名为其他名称，但是不建议，因为这个是约定俗成的）。这个时候你的目录应该是和下图一样，不一样也没关系，只要能进入这个`Dockerfile`所在的目录即可，我这样是为了看着清晰明了。  
 ![](/images/docker/1.jpg)
