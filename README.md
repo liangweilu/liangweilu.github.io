@@ -6,9 +6,18 @@
 
 __本博客地址:__ [https://liangweilu.github.io](https://liangweilu.github.io/)
 
+## 原型
+
+本博客基于[jekyll-theme-yat](https://github.com/jeffreytse/jekyll-theme-yat)模板进行修改，主要包含如下内容：
+
+- 修改博客字体为`Roboto, SourceHanSans, sans-serif, !default;`
+- 修改字体大小和间距
+- 增加基于[utterances](https://utteranc.es/)的评论插件
+- 增加[highlight.js](https://github.com/highlightjs/highlight.js/)代码块高亮显示主题
+
 ## 搭建步骤  
 
-- Fork一个Jekyll主题的工程到你的Github账户下，你可以Fork[我的工程](https://github.com/byeluliangwei/byeluliangwei.github.io)，请务必在`__posts`目录下，删除我已有的文章。也可以自己去[JEkyll主题网站](http://jekyllthemes.org)找你喜欢的主题，然后放到你的Github仓库中。  
+- Fork或下载本工程到你的Github账户下，完成后务必在`__posts`目录下，删除原已有的文章。也可以自己去[JEkyll主题网站](http://jekyllthemes.org)找你喜欢的主题，然后放到你的Github仓库中。  
 
 - 进入工程所在的`setting`中，修改工程名称为`{your github name}.github.io`。如下图所示：![](/images/readme/step1.png)
 
@@ -20,17 +29,6 @@ __本博客地址:__ [https://liangweilu.github.io](https://liangweilu.github.io
 
 - 最后就是发布文章，将你自己编写好的文章放到`__posts`目录下，提交到github之后，就完成了，进入你的博客，便能看见你所发布的文章。
 
-## jekyll主题
-
-[JEkyll主题网站](http://jekyllthemes.org) 使用方式说明
-- 选择喜欢的主题
-- `clone` 到本地
-- 找到你的博客主目录，先copy备份，然后删除其中除了`.git、_posts`文件夹和`CNAME`文件之外的其他所有文件及文件夹
-- 将你clone的主题的主目录下除`.git`文件夹外的其他文件及文件夹copy到你的博客主目录
-- 在主目录下启动`jekyll server`
-- 进入`localhost:4000`查看
-- 如果失败也别担心，因为本地可能缺少某些插件，push变更到github，发布成功后去查看  
-
 ## 开启评论
-我使用的模板是：[jekyll-theme-yat](https://github.com/jeffreytse/jekyll-theme-yat) 它支持[Disqus](https://disqus.com/)，[Gitment](https://github.com/imsun/gitment)，
+[jekyll-theme-yat](https://github.com/jeffreytse/jekyll-theme-yat) 支持[Disqus](https://disqus.com/)，[Gitment](https://github.com/imsun/gitment)，
 [utterances](https://utteranc.es/)三种评论，打开`_config.yml`文件，取消对应的注释，并填入你自己的信息即可。
