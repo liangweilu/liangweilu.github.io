@@ -36,17 +36,17 @@ OpenMPTCProuter的web页面就是一个它自己的feeds仓库中，也是我们
 ### 2.1 安装
 
 在修改页面之前我们需要先安装一个OpenMPTCProuter，以便后续查看修改是否生效。首先需要去官网下载对应的包，如我们是x86-64-bits的架构，就选择对应的镜像文件即可。
-![img.png](../../images/openwrt/img.png)
+![img.png](/images/openwrt/img.png)
 其实我们这里下载下来的就是一个linux系统镜像了，直接导入虚拟机管理软件（VMware或KVM）就可以用了。
 
 安装成功后，我们直接访问虚拟机的IP地址即可进入web管理页面了，web页面的系统设置中可以选择语言和主题，这里我选择的是OpenMPTCProuter主题，语言支持中文选择。
-![img_1.png](../../images/openwrt/img_1.png)[图片]
+![img_1.png](/images/openwrt/img_1.png)[图片]
 
 ### 2.2 修改web页面
 #### 2.2.1 直接修改
 完成上一节的安装后，进入系统，LuCI的相关代码都在路径`/usr/lib/lua/luci`目录下，而JavaScript，CSS等文件都在`/www`目录下。当我们需要修改或新
 增页面的时候，可以直接在`/usr/lib/lua/luci`目录下进行修改和添加，其目录内容为大致如下：
-![img_3.png](../../images/openwrt/img_3.png)
+![img_3.png](/images/openwrt/img_3.png)
 可以看到LuCI是一个MVC结构的框架:
 
 | 层级         | 位置                            | 功能                   |
@@ -84,7 +84,7 @@ vi /usr/lib/lua/luci/view/demo/index.htm
 <%+footer%>
 ```
 完成后重启uhttpd即可在web页面看到新增的内容。
-![img_4.png](../../images/openwrt/img_4.png)
+![img_4.png](/images/openwrt/img_4.png)
 这里对上述代码块中的entry方法进行以下解释，它的原本函数定义为：
 ```
 -- 参数依次含义：
@@ -104,11 +104,11 @@ end
 #### 2.2.2 修改feeds库
 这种方式是直接fork官方的feeds仓库，然后在里面新建一个app，可以参考官方已有的luci-app-openmptcprouter进行开发，app名称必须以luci-app-开头。
 openmptcprouter官方feed库中提供的。
-![img_5.png](../../images/openwrt/img_5.png)
+![img_5.png](/images/openwrt/img_5.png)
 其中htdocs目录对应编译后系统上的`/www`目录；luasrc目录对应`/usr/lib/lua/luci`；其它的配置等信息就对应`root`目录，和服务器一致。
 当我们在feeds库中新增的app，并提交到我们fork的仓库后，如何让我们的修改呈现在编译后的页面中呢？我们需要去修改`openmptcprouter`官方仓库中的
 `build.sh`文件，其中有一个feeds源地址，改为我们fork的仓库地址就好了。
-![img_6.png](../../images/openwrt/img_6.png)
+![img_6.png](/images/openwrt/img_6.png)
 这种方式不好的是要重新编译openmptcprouter，编译时间很长，很麻烦。因为OpenWrt是一个高度模块化的项目，肯定有更好的方式，只是我还没有找到。
 
 > PS: LuCI官方的wiki里推荐的是第一种方式进行修改。
