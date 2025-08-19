@@ -54,6 +54,7 @@ OpenMPTCProuter的web页面就是一个它自己的feeds仓库中，也是我们
 | Model      | /usr/lib/lua/luci/model/      | 提供配置接口，例如 uci 配置     |
 | View       | /usr/lib/lua/luci/view/       | HTML 模板（使用 Lua 模板语法) |
 | Controller | /usr/lib/lua/luci/controller/ | 注册菜单、处理请求            |
+
 由于框架带有缓存，所以我们修改后需要执行下面的命令才会生效：
 `/etc/init.d/uhttpd restart`
 
