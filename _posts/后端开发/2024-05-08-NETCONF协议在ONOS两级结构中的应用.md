@@ -2,7 +2,7 @@
 layout: post
 title: NETCONF协议在ONOS两级结构中的应用
 date: 2024-05-08
-tags: ONOS, NETCONF
+tags: ONOS,NETCONF
 categories:
   - 后端开发
 ---
